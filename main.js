@@ -1,34 +1,61 @@
 //winning combos
-var score = [,,,,,,,,]
-var one = score[0]
-var two = score[1]
-var three = score[2]
-var four = score[3]
-var five = score[4]
-var six = score[5]
-var seven = score[6]
-var eight = score[7]
-var nine = score[8]
 
-var score = []
 
-var a = one + two +three
-var b = one + four+ seven
-var c = four + five+ six
-var d = seven + eight +nine
-var e = one + five + nine
-var f = three + five + seven
-var g = two +five +eight 
-var h = three +six +nine
+// var one = score[0]
+// var two = score[1]
+// var three = score[2]
+// var four = score[3]
+// var five = score[4]
+// var six = score[5]
+// var seven = score[6]
+// var eight = score[7]
+// var nine = score[8]
+
+
+
+// var a = one + two + three 
+// var b = one + four +seven
+// var c = four + five + six
+// var d = seven + eight +nine
+// var e = one + five + nine
+// var f = three +five + seven
+// var g = two +five +eight 
+// var h = three +six +nine
+
+
 var buttons = document.getElementsByClassName('turn')
 var start = document.getElementsByClassName('start')
+var print = document.getElementsByClassName('winner')
+var score = [,,,,,,,,]
 var counter = []
+
+
 //Check for winners. after each turn 
 function won (){
-	if (a === 3 || b === 3 || c === 3 || d === 3 || e === 3 || f === 3 || g === 3 || h === 3){
-		var print = document.getElementsByClassName('winner')
-		print[0].innerHTML  = 'Winner!!' 
-		clear()
+		 score = buttons
+		 one = score[0].value
+		 two = score[1].value
+		 three = score[2].value
+		 four = score[3].value
+		 five = score[4].value
+		 six = score[5].value
+		 seven = score[6].value
+		 eight = score[7].value
+		 nine = score[8].value
+		var a = one + two + three 
+		var b = one + four +seven
+		var c = four + five + six
+		var d = seven + eight +nine
+		var e = one + five + nine
+		var f = three +five + seven
+		var g = two +five +eight 
+		var h = three +six +nine
+	if (  a === 'OOO'|| b === 'OOO' || c === 'OOO'|| d === 'OOO' || e === 'OOO' || f === 'OOO' || g === 'OOO' || h === 'OOO'){
+		print[0].innerHTML  = 'OOO Winner!!' 
+		
+	}else if(  a === 'XXX'|| b === 'XXX' || c === 'XXX' || d === 'XXX' || e === 'XXX' || f === 'XXX' || g === 'XXX' || h === 'XXX'){
+		print[0].innerHTML  = 'XXX Winner!!' 
+		
 
 	}
 	
@@ -51,19 +78,22 @@ for(var i = 0; i < 9; i++){
 	
 
 	button.addEventListener('click',function(event){
-		counter.push('1')
-		
-		var n = counter.length		
-		if(n % 2 == 0){
+		if(this.value != 'O' && this.value != 'X'){
+			counter.push('1')
 			
-			this.value = ('X')
-			
-
-		}else{
-			this.value = ('O')
-			
-		}	
-		
+			var n = counter.length		
+			if(n % 2 == 0){
+				
+				this.value = ('X')
+				score[n-1] =('X')
+				won()
+			}else{
+				this.value = ('O')
+				score[n-1] = ('O')
+				won()
+				
+			}	
+		} 
 	})
 
 }
@@ -72,8 +102,7 @@ for(var i = 0; i < 9; i++){
 for(var i = 0; i < 2; i++){
 var buttony = start[0]
 buttony.addEventListener('click',function(event){
-	clear()
-	var print = document.getElementsByClassName('winner')
+	clear()	
 	print[0].innerHTML  = ('Tic Tac Hoe')
 })
 
