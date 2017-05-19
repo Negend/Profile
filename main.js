@@ -91,7 +91,7 @@ for(var i = 0; i < 2; i++){
 var buttony = start[0]
 buttony.addEventListener('click',function(event){
 	clear()	
-	print[0].innerHTML  = ('Tic Tac Hoe')
+	print[0].innerHTML  = ('Tic Tac Toe')
 })
 
 }
