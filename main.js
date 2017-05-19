@@ -57,23 +57,30 @@ for(var i = 0; i < 9; i++){
 	
 
 	button.addEventListener('click',function(event){
-		if( print[0].innerHTML == 'Tic Tac Hoe'){	
+		if( print[0].innerHTML != 'XXX Winner!!' && print[0].innerHTML != 'OOO Winner!!' ){	
 			if(this.value != 'O' && this.value != 'X'){
 				counter.push('1')
 				
-				var n = counter.length		
+				 n = counter.length		
 				if(n % 2 == 0){
-					
+					print[0].innerHTML = ('OOOs turn')
 					this.value = ('X')
 					score[n-1] =('X')
 					won()
 				}else{
+					print[0].innerHTML = ('XXXs turn')
 					this.value = ('O')
 					score[n-1] = ('O')
 					won()
 					
 				}	
-			} 
+			}
+						
+		}
+		if( print[0].innerHTML != 'XXX Winner!!' && print[0].innerHTML != 'OOO Winner!!' ){
+			if(n==9) {
+				print[0].innerHTML = ('Draw')
+			}
 		}	
 	})
 
