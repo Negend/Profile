@@ -11,7 +11,7 @@ var counter = []
 
 //Check for winners. after each turn 
 function won (){
-		 score = buttons
+		var  score = buttons
 		 one = score[0].value
 		 two = score[1].value
 		 three = score[2].value
@@ -39,6 +39,40 @@ function won (){
 	}
 	
 }
+
+// function won() {
+// 	score = buttons
+// 	one = score[0].innerHTML
+// 	two = score[1].innerHTML
+// 	three = score[2].innerHTML
+// 	four = score[3].innerHTML
+// 	five = score[4].innerHTML
+// 	six = score[5].innerHTML
+// 	seven = score[6].innerHTML
+// 	eight = score[7].innerHTML
+// 	nine = score[8].innerHTML
+// 	var a = [one , two , three ]
+// 	var b =  [one , four ,seven]
+// 	var c = [four , five , six]
+// 	var d = [seven , eight , nine]
+// 	var e = [one , five , nine]
+// 	var f = [three ,five , seven]
+// 	var g = [two ,five ,eight] 
+// 	var combs = [a,b,c,d,e,f,g,h]
+// 	for(i = 0; i < combs.length; i++){
+// 		if(combs[i][1] == combs[i][2] && combs[i][3] == combs[i][2]){
+// 		alert ('winner')
+// 		print[0].innerHTML  = 'XXX Winner!!'
+// 		}
+// 	}	
+// }
+
+
+
+
+
+
+
 //clear to restart
 function clear (){
 	for(var i = 0; i < 9; i++){
